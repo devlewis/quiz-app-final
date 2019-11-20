@@ -125,11 +125,8 @@ label{
 
     button{
         font-size: 1.2em;
-        padding: 5px;
-    }
-
-    .box{
-        margin-top: 25%;
+        padding-top: 5px;
+        padding-bottom: 5px;
     }
 }
 
