@@ -107,16 +107,16 @@ label{
     }
 
     h4{
-    font-size: 1em;
+    font-size: 1.3em;
     }
 
     legend{
-        font-size: 1em;
+        font-size: 1.3em;
     }
 
     label{
         display: block;
-        font-size: 1.2em;
+        font-size: 1.3em;
     }
 
     .question{
@@ -124,7 +124,8 @@ label{
     }
 
     button{
-        font-size: 1.3em;
+        font-size: 1.2em;
+        padding: 5px;
     }
 
     .box{
