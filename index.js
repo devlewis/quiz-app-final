@@ -101,7 +101,7 @@ function injectHTML(i) {
   STORE[i].options.forEach(function(option, index){
     $(`<label for="${index}" class= "radio">
         <input type="radio" id="${index}" value="${option}" name="option" required>
-        <span>${option}</span><span>   </span><br></br>
+        <span>${option}</span><span>     </span><br></br>
       </label>
       `).appendTo(fieldsetFinder);
   });
