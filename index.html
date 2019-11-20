@@ -14,16 +14,16 @@
 <body>
     <main>
         <section class="containerBox">
-        <div class="startView box">
+        <div role="welcome view" class="startView box">
           <h1>European Countries: Capitals</h1>
           <h4>Sure, you know Paris, London, and Berlin. . .</h4>
           <h4>But what about these lesser-known capitals?</h4>
           <button type="button" class="start button">Test Your Knowledge!</button>
         </div>
-        <section class="views questionView box">
+        <section role="question view" class="views questionView box">
         </section>
-        <section class="views feedbackView box"></section>
-        <section class="views finalView box"></section>
+        <section role="answer view" class="views feedbackView box"></section>
+        <section role="end of quiz view" class="views finalView box"></section>
       </section>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>

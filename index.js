@@ -80,9 +80,9 @@ function beginQuiz() {
 //question view maker
 function makeQuestion() {
   if (questionNum < STORE.length) {
-    return injectHTML(questionNum);
+    return injectHTML(questionNum)
   } else {
-    $('.questionView').hide();
+    $('.questionView').hide()
     finalPage();
   }
 }
@@ -96,10 +96,10 @@ function injectHTML(i) {
     </fieldset>
   </form>`)
 
-  let fieldsetFinder = $(htmlInject).find('fieldset');
+  let fieldsetFinder = $(htmlInject).find('fieldset')
 
   STORE[i].options.forEach(function(option, index){
-    $(`<label for="${index}" class= "radio">
+    $(`<label for="${index}">
         <input type="radio" id="${index}" value="${option}" name="option" required>
         <span>${option}</span><span>     </span><br></br>
       </label>
@@ -110,12 +110,8 @@ function injectHTML(i) {
  `).appendTo(fieldsetFinder);
 
 $(`<p class="small">You've answered ${totalScore} correctly and ${incorrect} incorrectly.</p>`).appendTo(fieldsetFinder);
-
-
+  
   return htmlInject;}
-
-
-
 
 //submits selected option 
 //check to see if it matches correct option in STORE
@@ -130,33 +126,37 @@ function submitOption() {
     let correct = STORE[questionNum].correct;
     if (option === correct) {
       totalScore++;
-      correctFeedback();
+      $('.feedbackView').html(
+        `<h1 class="green">Brilliant!</h1>
+          <button class="next">Next one!</button>
+          <p class="centered raleway">You've answered ${totalScore} correctly out of ${STORE.length} total!</p>`
+      )
     } else {
       incorrect++;
-      wrongFeedback();
+      $('.feedbackView').html(
+        `<h1 class="red">Sorry!</h1>
+        <p class="question raleway centered">${STORE[questionNum].correct} is the capital of ${STORE[questionNum].country}.</p>
+        <button class="next">Next one</button>
+        <p class="centered raleway">You've answered ${totalScore} correctly out of ${STORE.length} total.</p>`
+      );
     }
   });
 } 
 
-//MAYBE I WILL COMBINE THESE, JUST FOR FUN 
 //feedback view for correct answer
-function correctFeedback() {
-  $('.feedbackView').html(
-    `<h1 class="green">Brilliant!</h1>
-      <button class="next">Next one!</button>
-      <p class="centered raleway">You've answered ${totalScore} correctly out of ${STORE.length} total!</p>`
-  );
-}
+//function correctFeedback() {
+  //;
+//}
 
 //feedback view for incorrect answer
-function wrongFeedback() {
-  $('.feedbackView').html(
-    `<h1 class="red">Sorry!</h1>
-    <p class="question raleway centered">${STORE[questionNum].correct} is the capital of ${STORE[questionNum].country}.</p>
-    <button class="next">Next one</button>
-    <p class="centered raleway">You've answered ${totalScore} correctly out of ${STORE.length} total.</p>`
-  );
-}
+// function wrongFeedback() {
+//   $('.feedbackView').html(
+//     `<h1 class="red">Sorry!</h1>
+//     <p class="question raleway centered">${STORE[questionNum].correct} is the capital of ${STORE[questionNum].country}.</p>
+//     <button class="next">Next one</button>
+//     <p class="centered raleway">You've answered ${totalScore} correctly out of ${STORE.length} total.</p>`
+//   );
+// }
 
 //makes the next question
 function nextQuestion() {
