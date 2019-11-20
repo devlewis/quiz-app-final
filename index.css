@@ -19,11 +19,13 @@ h4{ font-family: 'Raleway', sans-serif;
     text-align: center;
     font-size: 1.25em;
 }
+
 .box{
     background: rgba(35, 35, 36, 0.836);
     border: solid gold;
     margin: auto; 
-    margin-top: 15%;
+    margin-top: 20%;
+    margin-bottom: 20%;
     width: 60%;
     padding-left: 10px;
     padding-right: 10px;
@@ -66,12 +68,12 @@ label{
     font-size: 1.25em;
 }
 
-.span::after{
+/* .span::after{
     content: "    ";
-}
+} */
 
 .small{
-    font-size: .9em;
+    font-size: 1em;
 }
 
 .centered{
@@ -96,11 +98,11 @@ label{
 }
 
 .rspns{
-    font-size: 1.25em;
+    font-size: 2em;
 }
 
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 768px) {
     h1{
     font-size: 2em;
     }
@@ -127,6 +129,37 @@ label{
     }
 
     .box{
-        height: 60%;
+        margin-top: 20%;
     }
+}
+
+@media only screen and (min-width: 1445px){
+    h1{
+        font-size: 5em;
+        }
+    
+        h4{
+        font-size: 4em;
+        }
+    
+        legend{
+            font-size: 4em;
+        }
+    
+        label{
+            display: block;
+            font-size: 3em;
+        }
+    
+        .question{
+            font-size: 3em;
+        }
+    
+        button{
+            font-size: 3em;
+        }
+
+        .small{
+            font-size: 2.5em;
+        }
 }

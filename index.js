@@ -60,7 +60,7 @@ const STORE = [
         "Ljubljana",
       country: "Slovenia"
     }
-  ];
+  ]
 
 //quiz score and question number initialization
 let totalScore = 0
@@ -83,7 +83,7 @@ function makeQuestion() {
     return injectHTML(questionNum)
   } else {
     $('.questionView').hide()
-    finalPage();
+    finalPage()
   }
 }
 
@@ -101,29 +101,29 @@ function injectHTML(i) {
   STORE[i].options.forEach(function(option, index){
     $(`<label for="${index}">
         <input type="radio" id="${index}" value="${option}" name="option" required>
-        <span>${option}</span><span>     </span><br></br>
+        <span>${option}    </span><br></br>
       </label>
-      `).appendTo(fieldsetFinder);
+      `).appendTo(fieldsetFinder)
   });
 
   $(`<button type="submit">Submit</button>
- `).appendTo(fieldsetFinder);
+ `).appendTo(fieldsetFinder)
 
-$(`<p class="small">You've answered ${totalScore} correctly and ${incorrect} incorrectly.</p>`).appendTo(fieldsetFinder);
+$(`<p class="small">You've answered ${totalScore} correctly and ${incorrect} incorrectly.</p>`).appendTo(fieldsetFinder)
   
-  return htmlInject;}
+  return htmlInject}
 
 //submits selected option 
 //check to see if it matches correct option in STORE
 //run response functions
 function submitOption() {
   $('.containerBox').on('submit', function(event) {
-    event.preventDefault();
-    $('.views').hide();
-    $('.feedbackView').show();
-    let selected = $('input:checked');
-    let option = selected.val();
-    let correct = STORE[questionNum].correct;
+    event.preventDefault()
+    $('.views').hide()
+    $('.feedbackView').show()
+    let selected = $('input:checked')
+    let option = selected.val()
+    let correct = STORE[questionNum].correct
     if (option === correct) {
       totalScore++;
       $('.feedbackView').html(
@@ -138,53 +138,38 @@ function submitOption() {
         <p class="question raleway centered">${STORE[questionNum].correct} is the capital of ${STORE[questionNum].country}.</p>
         <button class="next">Next one</button>
         <p class="centered raleway">You've answered ${totalScore} correctly out of ${STORE.length} total.</p>`
-      );
+      )
     }
-  });
+  })
 } 
-
-//feedback view for correct answer
-//function correctFeedback() {
-  //;
-//}
-
-//feedback view for incorrect answer
-// function wrongFeedback() {
-//   $('.feedbackView').html(
-//     `<h1 class="red">Sorry!</h1>
-//     <p class="question raleway centered">${STORE[questionNum].correct} is the capital of ${STORE[questionNum].country}.</p>
-//     <button class="next">Next one</button>
-//     <p class="centered raleway">You've answered ${totalScore} correctly out of ${STORE.length} total.</p>`
-//   );
-// }
 
 //makes the next question
 function nextQuestion() {
   $('.containerBox').on('click', '.next', function (event) {
-    questionNum++;
-    $('.views').hide();
-    $('.questionView').show();
-    $('.questionView form').replaceWith(makeQuestion());
-  });
+    questionNum++
+    $('.views').hide()
+    $('.questionView').show()
+    $('.questionView form').replaceWith(makeQuestion())
+  })
 }
 
 //shows final results
 function finalPage() {
-  $('.finalView').show();
+  $('.finalView').show()
 
   if (totalScore === STORE.length) {
-    rspns = "Great!";
+    rspns = "Great!"
   } else if (totalScore > (STORE.length/2)) {
-    rspns = "Good job!";
+    rspns = "Good job!"
   } else {
-    rspns = "Try again!";
+    rspns = "Try again!"
   }
   return $('.finalView').html(
     `<h1 class="final">You're Done!</h1>
     <h1>You answered ${totalScore} correctly and ${incorrect} incorrectly.</h1>
     <h4 class="rspns">${rspns}</h4>
     <button type="submit" class="restart">Take it again!</button>`
-  );
+  )
 }
 
 
@@ -192,29 +177,29 @@ function finalPage() {
 //re-initializes score and question number at 0
 //resets question view footer info 
 function resetScore() {
-  totalScore = 0;
-  questionNum = 0;
-  incorrect = 0;
+  totalScore = 0
+  questionNum = 0
+  incorrect = 0
 }
 
 
 //takes user back to the starting view to restart the quiz
 function restartQuiz() {
   $('.containerBox').on('click', '.restart', function (event) {
-    event.preventDefault();
-    resetScore();
-    $('.views').hide();
-    $('.startView').show();
-  });
+    event.preventDefault()
+    resetScore()
+    $('.views').hide()
+    $('.startView').show()
+  })
 }
 
 //runs the functions
 function makeQuiz() {
-  beginQuiz();
-  makeQuestion();
-  submitOption();
-  nextQuestion();
-  restartQuiz();
+  beginQuiz()
+  makeQuestion()
+  submitOption()
+  nextQuestion()
+  restartQuiz()
 }
 
-$(makeQuiz);
+$(makeQuiz)
