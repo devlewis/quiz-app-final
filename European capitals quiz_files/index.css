@@ -1,0 +1,154 @@
+body {
+    background-image: url("https://cdn.pixabay.com/photo/2016/02/14/03/49/flag-1198978_960_720.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(1, 1, 49, 0.6);
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    color: white;
+}
+
+h1 {
+    font-family: 'Lato', sans-serif;
+    color: gold;
+    font-size: 2.5em;
+    text-align: center;
+}
+
+h4 {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    font-size: 1.25em;
+}
+
+.box {
+    background: rgba(35, 35, 36, 0.836);
+    border: solid gold;
+    margin: auto;
+    margin-top: 15%;
+    width: 60%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+}
+
+button {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 750;
+    background-color: gold;
+    border: solid white, 1px;
+    font-size: 1.25em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+legend {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.25em;
+    text-align: center;
+    border: solid gold 1px;
+}
+
+fieldset {
+    border: none;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+}
+
+.question {
+    color: gold;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+label {
+    width: 25%;
+    display: inline-block;
+    font-size: 1.25em;
+}
+
+.small {
+    font-size: 1em;
+}
+
+.centered {
+    text-align: center;
+}
+
+.raleway {
+    font-family: 'Raleway', sans-serif;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: lightgreen;
+}
+
+.final {
+    color: white;
+    font-size: 2.5em;
+}
+
+.rspns {
+    font-size: 2em;
+}
+
+@media only screen and (max-width: 768px) {
+    .box {
+        margin-top: 20%;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    h4 {
+        font-size: 1.3em;
+    }
+    legend {
+        font-size: 1.3em;
+    }
+    label {
+        margin: auto;
+        width: auto;
+        display: block;
+        font-size: 1.3em;
+    }
+    .question {
+        font-size: 1.3em;
+    }
+    button {
+        font-size: 1.2em;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+}
+
+@media only screen and (min-width: 1445px) {
+    h1 {
+        font-size: 5em;
+    }
+    h4 {
+        font-size: 4em;
+    }
+    legend {
+        font-size: 4em;
+    }
+    label {
+        width: 25%;
+        font-size: 3em;
+    }
+    .question {
+        font-size: 3em;
+    }
+    button {
+        font-size: 3em;
+    }
+    .small {
+        font-size: 2.5em;
+    }
+}
